@@ -6,7 +6,7 @@ class FlagGame(MycroftSkill):
     def __init__(self):
         MycroftSkill.__init__(self)
         self.quiz_questions = [
-            {'question': 'Which country is Toronto in?
+            {'question': 'Which country is Toronto in?',
              'answer': 'Canada',
              'options': ['Canada', 'United States', 'Australia', 'France']},
             {'question': 'Which country is Rome in?',
@@ -41,10 +41,8 @@ class FlagGame(MycroftSkill):
 
     def ask_question(self):
         question = self.quiz_questions[self.question_index]['question']
-        image = self.quiz_questions[self.question_index]['image']
         options = self.quiz_questions[self.question_index]['options']
         random.shuffle(options)
-        self.enclosure.display_image(image)
         self.speak(question)
         self.speak("Your options are:")
         for option in options:
